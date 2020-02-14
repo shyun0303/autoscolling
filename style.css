@@ -1,0 +1,98 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+body {
+  margin: 0;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  background-image: url("back.png");
+  background-size: cover;
+  background-position: center center;
+  background-blend-mode: multiply;
+}
+
+h1 {
+  color: #fff;
+}
+
+@-webkit-keyframes letter-in {
+  0% {
+    top: 1.2em;
+  }
+  100% {
+    top: 0em;
+  }
+}
+
+@keyframes letter-in {
+  0% {
+    top: 1.2em;
+  }
+  100% {
+    top: 0em;
+  }
+}
+@-webkit-keyframes letter-out {
+  0% {
+    top: 0em;
+  }
+  100% {
+    top: -1.5em;
+  }
+}
+@keyframes letter-out {
+  0% {
+    top: 0em;
+  }
+  100% {
+    top: -1.5em;
+  }
+}
+div.changing-title {
+  font-size: 4vw;
+  height: 1.3em;
+  position: relative;
+  width: 100%;
+  overflow-y: hidden;
+  margin-left: 1em;
+   transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  margin-bottom: 100px;
+  }
+div.changing-title h1 {
+  font-size: 1em;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+}
+div.changing-title h1 .letter {
+  position: relative;
+  top: 1.2em;
+}
+div.changing-title h1 .letter.in {
+  -webkit-animation-name: letter-in;
+          animation-name: letter-in;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+div.changing-title h1 .letter.out {
+  top: 0em;
+  -webkit-animation-name: letter-out;
+          animation-name: letter-out;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}

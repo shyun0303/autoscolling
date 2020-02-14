@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script defer src="face-api.min.js"></script>
+  <script defer src="script.js"></script>
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script>
+    function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+
+  var url = getParameterByName("url");
+    document.addEventListener("DOMContentLoaded", function() {
+      document.getElementById("ifr").setAttribute("src",url)
+
+});
+
+  </script>
+  <style>
+     *{
+     padding: 0;
+     margin: 0;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    /*  overflow-y: scroll;*/
+    }
+    video {
+      position: fixed;
+    }
+
+
+
+  </style>
+
+</head>
+<body>
+ <div style=" left:0; top: 0; width:100%;  background-color: lightslategrey;">
+  
+  
+  <video id="video" width = 1 height=1 autoplay muted></video>
+ 
+  <!--<div id="iframe_container" style="position: fixed; left: 10%; top: 80px; right: 10%; bottom: 65px; background: white; opacity: 0.89; border-radius: 10px">-->
+    <iframe id="ifr" scrolling="no" style="position: absolute; height:100000px;width:100%;border:1px solid black; " 
+    src="" >
+    </iframe>
+  </div>
+	<!--<iframe src = "https://comic.naver.com/webtoon/detail.nhn?titleId=602916&no=248&weekday=wed"
+			id = "iframe"
+      class = "iframe"
+  >
+</iframe>-->
+</div>
+</body>
+</html>
