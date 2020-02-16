@@ -16,46 +16,43 @@
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
-
-  var url = getParameterByName("url");
-    document.addEventListener("DOMContentLoaded", function() {
+    var url = getParameterByName("url");
+      document.addEventListener("DOMContentLoaded", function() {
       document.getElementById("ifr").setAttribute("src",url)
-
 });
 
   </script>
   <style>
-     *{
-     padding: 0;
-     margin: 0;
-    }
+    
     body {
       margin: 0;
       padding: 0;
       width: 100%;
       justify-content: center;
       align-items: center;
+      overflow-x: hidden;
+      ;
     /*  overflow-y: scroll;*/
     }
     video {
       position: fixed;
     }
-
-
+    canvas{
+      position:fixed;
+    }
 
   </style>
 
 </head>
 <body>
- <div style=" left:0; top: 0; width:100%;  background-color: lightslategrey;">
-  
-  
-  <video id="video" width = 1 height=1 autoplay muted></video>
- 
+  <div style=" left:0; top: 0; width:100%; ">
+
   <!--<div id="iframe_container" style="position: fixed; left: 10%; top: 80px; right: 10%; bottom: 65px; background: white; opacity: 0.89; border-radius: 10px">-->
-    <iframe id="ifr" scrolling="no" style="position: absolute; height:100000px;width:100%;border:1px solid black; " 
+   <iframe id="ifr" scrolling="no"  style="position: absolute; width:100%; height:100000px;" 
     src="" >
     </iframe>
+  
+    <video id="video" width = 600 height=450 autoplay muted></video>
   </div>
 	<!--<iframe src = "https://comic.naver.com/webtoon/detail.nhn?titleId=602916&no=248&weekday=wed"
 			id = "iframe"
