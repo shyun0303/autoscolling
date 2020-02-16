@@ -28,26 +28,26 @@ function startVideo() {
   )
 }
 
-video.addEventListener('play', () => {
-  const canvas = faceapi.createCanvasFromMedia(video);
-  document.body.append(canvas)
-  const displaySize = { width: video.width, height: video.height }
-  faceapi.matchDimensions(canvas, displaySize)
+// video.addEventListener('play', () => {
+//   const canvas = faceapi.createCanvasFromMedia(video);
+//   document.body.append(canvas)
+//   const displaySize = { width: video.width, height: video.height }
+//   faceapi.matchDimensions(canvas, displaySize)
   setInterval(async () => {
     const detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions()
-    const resizedDetections = faceapi.resizeResults(detections, displaySize)
-    canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
-    faceapi.draw.drawDetections(canvas, resizedDetections)
-    faceapi.draw.drawFaceLandmarks(canvas, resizedDetections)
+    // const resizedDetections = faceapi.resizeResults(detections, displaySize)
+    // // canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
+    // faceapi.draw.drawDetections(canvas, resizedDetections)
+    // faceapi.draw.drawFaceLandmarks(canvas, resizedDetections)
     //faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
     //const detectionWithExpressions = await faceapi.detectSingleFace(video).withFaceLandmarks().withFaceExpressions()    
     //console.log(detections[0].expressions.surprised)
-    const landmarks1 = await faceapi.detectFaceLandmarks(video)
-    const mouth = landmarks1.getMouth()
-    const leftEye = landmarks1.getLeftEye()
-    const rightEye = landmarks1.getRightEye()
+    // const landmarks1 = await faceapi.detectFaceLandmarks(video)
+    // const mouth = landmarks1.getMouth()
+    // const leftEye = landmarks1.getLeftEye()
+    // const rightEye = landmarks1.getRightEye()
    
-    console.log('leftEye: ',leftEye)
+    // console.log('leftEye: ',leftEye)
     //console.log('rightEye: ',rightEye)
     //console.log('mouth: ',mouth) 
     try {
